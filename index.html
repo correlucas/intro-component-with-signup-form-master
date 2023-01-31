@@ -24,8 +24,8 @@
       <a href="#"><span>Try it free 7 days</span> then $20/mo. thereafter</a>
 
       <div>
-        <label for="firstName"></label>
-        <input type="text" name="name" id="firstName" placeholder="First Name">
+        <label for="firstName">first name</label>
+        <input type="number" name="name" id="firstName" placeholder="First Name">
 
         <label for="lastName"></label>
         <input type="text" name="last name" id="lastName" placeholder="Last Name">
@@ -34,10 +34,10 @@
         <input type="email" name="email" id="email" placeholder="Email Address">
 
         <label for="password"></label>
-        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="password" name="password" id="password" placeholder="Password" minlength="4" maxlength="6"> <!-- maximum e minimum of characters-->
       </div>
 
-      <button id="btnTrial" name="submit" type="submit">Claim your free trial</button>
+      <button name="submit" type="submit" id="btnTrial">Claim your free trial</button>
     </form>
   </main>
 
