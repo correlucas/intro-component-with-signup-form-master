@@ -29,10 +29,17 @@ body {
 }
 
 main {
-  @include container();
+  max-width: 1110px;
   @include flex(row, center, unset, center);
   padding-block: 120px;
   gap: 45px;
+  margin-inline: 40px;
+
+  @include display(tablet) {
+    padding-block: 60px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 article {
@@ -45,6 +52,11 @@ h1 {
   line-height: 55px;
   letter-spacing: -0.5px;
   padding-bottom: 28px;
+
+  @include display(tablet) {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 p {
@@ -60,13 +72,17 @@ button {
   @include border-radius;
 }
 
-a,
+.btn,
 form {
   padding: 18px 20px;
   box-shadow: 0px 8px 1px rgba(0, 0, 0, 0.1);
+
+  @include display(tablet) {
+    flex-direction: column;
+  }
 }
 
-a {
+.btn {
   @include simpleFlex(center, center);
   @include transition;
   font-weight: 300;
@@ -82,16 +98,33 @@ a {
   }
 }
 
-span {
+strong {
   font-weight: 600;
+  padding-right: 6px;
 }
 
 form {
   @include flex(column, unset, unset, unset);
   background-color: $white;
-  padding: 20px;
+  padding: 40px;
   gap: 20px;
   min-width: 540px;
+
+  @include display(tablet) {
+    max-width: max-content;
+    min-width: unset;
+  }
+
+  p {
+    color: rgba($gray, 0.8);
+    text-align: center;
+    font-size: 11px;
+    line-height: 26px;
+  }
+
+  strong {
+    color: $salmon;
+  }
 }
 
 input {
@@ -103,12 +136,16 @@ input {
 button {
   @include simpleFlex(center, center);
   @include transition;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   box-shadow: 0px 5px 1px hsla(154, 57%, 46%, 1);
   padding: 18px 20px;
   background-color: $green;
   &:hover {
     @include transition;
     background-color: darken($green, $amount: 10%);
+    box-shadow: 0px 5px 1px rgb(22, 100, 66);
   }
 }
 

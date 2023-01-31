@@ -116,7 +116,6 @@ body {
 
 main {
   max-width: 1110px;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -124,6 +123,15 @@ main {
   align-items: center;
   padding-block: 120px;
   gap: 45px;
+  margin-inline: 40px;
+}
+
+@media (max-width: 900px) {
+  main {
+    padding-block: 60px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 article {
@@ -136,6 +144,13 @@ h1 {
   line-height: 55px;
   letter-spacing: -0.5px;
   padding-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 p {
@@ -151,13 +166,20 @@ button {
   border-radius: 10px;
 }
 
-a,
+.btn,
 form {
   padding: 18px 20px;
   box-shadow: 0px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
-a {
+@media (max-width: 900px) {
+  .btn,
+  form {
+    flex-direction: column;
+  }
+}
+
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,13 +193,14 @@ a {
   margin-bottom: 24px;
 }
 
-a:hover {
+.btn:hover {
   transition: all 0.6s ease;
   background-color: #4c4483;
 }
 
-span {
+strong {
   font-weight: 600;
+  padding-right: 6px;
 }
 
 form {
@@ -187,9 +210,27 @@ form {
   justify-content: unset;
   align-items: unset;
   background-color: white;
-  padding: 20px;
+  padding: 40px;
   gap: 20px;
   min-width: 540px;
+}
+
+@media (max-width: 900px) {
+  form {
+    max-width: max-content;
+    min-width: unset;
+  }
+}
+
+form p {
+  color: rgba(110, 108, 117, 0.8);
+  text-align: center;
+  font-size: 11px;
+  line-height: 26px;
+}
+
+form strong {
+  color: #ff7a7a;
 }
 
 input {
@@ -203,6 +244,9 @@ button {
   align-items: center;
   justify-content: center;
   transition: all 0.6s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   box-shadow: 0px 5px 1px #32b87e;
   padding: 18px 20px;
   background-color: #38cc8c;
@@ -211,6 +255,7 @@ button {
 button:hover {
   transition: all 0.6s ease;
   background-color: #2ba671;
+  box-shadow: 0px 5px 1px #166442;
 }
 
 input[type="text"],
