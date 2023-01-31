@@ -68,6 +68,7 @@ form {
 
 a {
   @include simpleFlex(center, center);
+  @include transition;
   font-weight: 300;
   font-size: 15px;
   line-height: 1.4;
@@ -75,6 +76,10 @@ a {
   color: $white;
   border-radius: 10px;
   margin-bottom: 24px;
+  &:hover {
+    @include transition;
+    background-color: darken($blue, $amount: 10%);
+  }
 }
 
 span {
@@ -93,14 +98,30 @@ input {
   padding: 15px 32px;
   max-width: 100%;
   border-color: $light-gray;
-  &:focus {
-    border-color: $green;
-  }
 }
 
 button {
   @include simpleFlex(center, center);
+  @include transition;
   box-shadow: 0px 5px 1px hsla(154, 57%, 46%, 1);
   padding: 18px 20px;
   background-color: $green;
+  &:hover {
+    @include transition;
+    background-color: darken($green, $amount: 10%);
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  color: $gray;
+  border: 1.5px solid $light-gray;
+  ::placeholder {
+    color: $gray;
+  }
+  &:focus::placeholder {
+    color: $black;
+    font-weight: 600;
+  }
 }
