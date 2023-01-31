@@ -1,5 +1,22 @@
-@mixin flex($align-items: unset, $justify-content: unset) {
+@mixin simpleFlex($justify-content: unset, $align-items: unset) {
   display: flex;
   align-items: $align-items;
   justify-content: $justify-content;
+}
+
+@mixin flex($direction: unset, $align-content: unset, $justify-content: unset, $align-items: unset) {
+  display: flex;
+  flex-direction: $direction;
+  align-content: $align-content;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+@mixin border-radius {
+  border-radius: 10px;
 }

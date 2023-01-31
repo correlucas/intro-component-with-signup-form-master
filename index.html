@@ -20,25 +20,30 @@
       <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
     </article>
 
-    <form>
-      <a href="#"><span>Try it free 7 days</span> then $20/mo. thereafter</a>
+    <div>
+      <a href="#"><span>Try it free 7 days</span> then $20/month!</a>
 
-      <div>
-        <label for="firstName">first name</label>
-        <input type="number" name="name" id="firstName" placeholder="First Name">
 
-        <label for="lastName"></label>
+
+      <form>
+        <label for="firstName" class="visuallyhidden">Name</label>
+        <input type="text" name="name" id="firstName" placeholder="First Name">
+
+        <label for="lastName" class="visuallyhidden">Last Name</label>
         <input type="text" name="last name" id="lastName" placeholder="Last Name">
 
-        <label for="email"></label>
+        <label for="email" class="visuallyhidden">Email</label>
         <input type="email" name="email" id="email" placeholder="Email Address">
 
-        <label for="password"></label>
+        <label for="password" class="visuallyhidden">Password</label>
         <input type="password" name="password" id="password" placeholder="Password" minlength="4" maxlength="6"> <!-- maximum e minimum of characters-->
-      </div>
 
-      <button name="submit" type="submit" id="btnTrial">Claim your free trial</button>
+        <button name="submit" type="submit" id="btnTrial">Claim your free trial</button>
+    </div>
     </form>
+
+
+    </div>
   </main>
 
 </body>
